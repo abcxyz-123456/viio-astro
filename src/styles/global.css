@@ -1,5 +1,6 @@
 @import './reset.css';
 @import './utils.css';
+@import './grid.css';
 @import './reveals.css';
 
 :root {

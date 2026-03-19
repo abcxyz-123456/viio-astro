@@ -31,4 +31,11 @@
     display: block;
   }
 }
+[data-sy-reveal] {
+  opacity: 0;
+
+  &.is-in {
+    opacity: 1;
+  }
+}
 

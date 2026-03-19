@@ -13,3 +13,24 @@
 .u-heading {
   @extend %u-heading;
 }
+
+.u-flex {
+  display: flex;
+}
+
+.u-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.u-align-center {
+  align-items: center;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-justify-center {
+  justify-content: center;
+}

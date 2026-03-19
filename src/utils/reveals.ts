@@ -176,6 +176,46 @@ const fns = {
         );
       }
     }
+  },
+  fade(el: HTMLElement) {
+    return {
+      in() {
+        gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "power2.out" });
+      },
+      out(next: () => void) {
+        gsap.to(el, { opacity: 0, duration: 0.4, ease: "power2.in", onComplete: next });
+      }
+    };
+  },
+  slideUp(el: HTMLElement) {
+    return {
+      in() {
+        gsap.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" });
+      },
+      out(next: () => void) {
+        gsap.to(el, { opacity: 0, y: -30, duration: 0.4, ease: "power3.in", onComplete: next });
+      }
+    };
+  },
+  scaleUp(el: HTMLElement) {
+    return {
+      in() {
+        gsap.fromTo(el, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" });
+      },
+      out(next: () => void) {
+        gsap.to(el, { opacity: 0, scale: 1.1, duration: 0.4, ease: "power2.in", onComplete: next });
+      }
+    };
+  },
+  blurIn(el: HTMLElement) {
+    return {
+      in() {
+        gsap.fromTo(el, { opacity: 0, filter: "blur(10px)" }, { opacity: 1, filter: "blur(0px)", duration: 1, ease: "power2.out" });
+      },
+      out(next: () => void) {
+        gsap.to(el, { opacity: 0, filter: "blur(10px)", duration: 0.5, ease: "power2.in", onComplete: next });
+      }
+    };
   }
 }
 

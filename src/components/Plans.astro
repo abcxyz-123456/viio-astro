@@ -28,19 +28,19 @@ const { title, subtitle, items } = Astro.props;
     <div data-gl-place data-gl-place-factor="1.5"></div>
 
     <h2 class="u-heading title" data-sy-reveal="words">{title}</h2>
-    <p class="u-text subtitle" data-sy-reveal="lines">{subtitle}</p>
+    <p class="u-text subtitle" data-sy-reveal="blurIn">{subtitle}</p>
 
     <div class="plans">
       {
         items.map((item, i) => (
-          <div class="plan">
+          <div class="plan" data-sy-reveal="slideUp" style={`--d: ${i * 0.2}s`}>
             <div class="plan-inner">
               <h3 class="u-text plan-title" data-sy-reveal="words">
                 {item.title}
               </h3>
               <p class="u-heading price">
-                <span data-sy-reveal="words">{item.price.amount}</span>
-                <span class="duration u-text" data-sy-reveal="words">
+                <span data-sy-reveal="blurIn">{item.price.amount}</span>
+                <span class="duration u-text">
                   /{item.price.duration}
                 </span>
               </p>
@@ -48,7 +48,7 @@ const { title, subtitle, items } = Astro.props;
                 {item.features.map((feat) => (
                   <li
                     class:list={[!feat.disabled && "available"]}
-                    data-sy-reveal="lines"
+                    data-sy-reveal="fade"
                   >
                     {feat.title}
                   </li>
@@ -128,6 +128,7 @@ const { title, subtitle, items } = Astro.props;
     padding: 2px;
     background: var(--color-white);
     overflow: hidden;
+    animation-delay: var(--d);
 
     &:last-child {
       background: transparent;

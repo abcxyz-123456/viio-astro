@@ -22,10 +22,10 @@ const { title, items } = Astro.props;
             items.map((item, i) => (
               <div class:list={["item", i === 0 && "is-active"]}>
                 <div class="item-inner">
-                  <h3 class="u-heading item-title" data-sy-reveal="words">
+                  <h3 class="u-heading item-title" data-sy-reveal="blurIn">
                     {item.title}
                   </h3>
-                  <p class="u-text item-text" data-sy-reveal="lines">
+                  <p class="u-text item-text" data-sy-reveal="fade">
                     {item.text}
                   </p>
                 </div>
